@@ -1,0 +1,11 @@
+.swInterface {
+    background-color: black;
+    color: yellow;
+    height: 30vh;
+    width: 100vw;
+    bottom: 0vh;
+    position: fixed;
+    border-top: 5px dashed yellow;
+
+/*    box-shadow: 10px 10px 30px 5px rgba(0,0,0,0.9);*/
+}
