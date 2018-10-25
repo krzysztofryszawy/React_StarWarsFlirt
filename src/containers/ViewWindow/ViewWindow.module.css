@@ -1,8 +1,7 @@
 .viewWindow {
     background-color: black;
     color: yellow;
-    margin-top: 5vh;
-    height: 60vh;
+/*    height: 60vh;*/
     width: 80vw;
     opacity: .9;
     border: 5px dashed yellow;

@@ -1,11 +1,11 @@
-.SwFlirt {
+.SwMain {
 /*    font-family: 'Geostar Fill', cursive;*/
 /*    font-family: 'Audiowide', cursive;*/
-/*    font-family: 'Black Ops One', cursive;*/
-    font-family: 'Kelly Slab', cursive;
+    font-family: 'Black Ops One', cursive;
+/*    font-family: 'Kelly Slab', cursive;*/
 
     background-color: none;
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
     user-select: none;
     display: flex;

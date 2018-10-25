@@ -1,0 +1,6 @@
+.profileBox {
+    background-color: rgba(50,50,50,0.8);
+    display: flex;
+    margin: 1em;
+    padding: .5em;
+}
