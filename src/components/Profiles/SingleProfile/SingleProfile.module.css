@@ -1,5 +1,6 @@
 .singleProfile {
-/*    display: flex;*/
-/*    flex-direction: rows;*/
+    display: flex;
+    justify-content:center;
+    /*    flex-direction: rows;*/
 /*    flex-wrap: wrap;*/
 }

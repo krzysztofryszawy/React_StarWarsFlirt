@@ -5,9 +5,12 @@ const description = (props) => {
     
     return(
         <div>
-            <div>Imię: {props.name}</div>
-            <div>Płeć: {props.gender}</div>
-            <div>Waga: {props.mass}</div>
+            <div>NAME: <span style={{color:'orange'}}>{props.name}</span></div>
+            <div>GENDER: <span style={{color:'orange'}}>{props.gender}</span></div>
+            <div>HEIGHT: <span style={{color:'orange'}}>{props.height}</span></div>
+            <div>MASS: <span style={{color:'orange'}}>{props.mass}</span></div>
+            <div>HAIRS: <span style={{color:'orange'}}>{props.hair_color}</span></div>
+            <div>SKIN CLR: <span style={{color:'orange'}}>{props.skin_color}</span></div>
         </div>
         
     

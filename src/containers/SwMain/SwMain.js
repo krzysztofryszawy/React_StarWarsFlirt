@@ -19,9 +19,9 @@ class swMain extends Component {
     
         return(
             <div className={styles['SwMain']}>
-               <h1 style={{backgroundColor: 'rgba(0, 0, 0, 0.6)', color:'yellow'}}>STAR-WARS FLIRT</h1>
+               <SwInterface
+                   filtruj={null}/>
                <ViewWindow/>
-               <SwInterface/>
             </div>
         )
     }

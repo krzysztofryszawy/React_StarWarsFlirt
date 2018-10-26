@@ -4,7 +4,7 @@ import styles from './SingleProfile.module.css'
 const singleProfile = (props) => {
     
     return(
-            <div className={styles['SingleProfile']}>
+            <div className={styles['singleProfile']}>
                 {props.children}
             </div>
     )

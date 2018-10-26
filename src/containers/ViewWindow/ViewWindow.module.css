@@ -2,7 +2,9 @@
     background-color: black;
     color: yellow;
 /*    height: 60vh;*/
-    width: 80vw;
+    width: 60vw;
     opacity: .9;
     border: 5px dashed yellow;
+       min-width: 400px;
+    margin-top: 25vh;
 }

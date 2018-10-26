@@ -1,6 +1,17 @@
+/*========================================================
+ This pattern is downloaded from www.subtlepatterns.com 
+ If you need more, that's where to get'em.
+ ========================================================*/
+
 .profileBox {
-    background-color: rgba(50,50,50,0.8);
+    background-image: url(../../assets/images/pw_maze_black.png);
+    background-repeat: repeat;
     display: flex;
-    margin: 1em;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+    margin: 2em;
     padding: .5em;
+    border: 2px dashed darkorange;
+    width: 20em;
 }

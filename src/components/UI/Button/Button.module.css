@@ -1,0 +1,42 @@
+.Button {
+    outline: none;
+    border: 2px dashed orange;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+    font-size: .6em;
+    text-align: center;
+/*    min-height: 2em;*/
+    padding: .5em;
+}
+
+/*
+.Button:first-of-type {
+    margin-left: 0;
+    padding-left: 0;
+}
+*/
+
+.Proceed {
+    background-color: darkolivegreen;
+    cursor: pointer;
+}
+.Proceed:hover {
+    background-color: yellowgreen;
+}
+
+.Cancel {
+    background-color: darkred;
+    cursor: pointer;
+}
+.Cancel:hover {
+    background-color: red
+}
+
+.Disabled {
+    background-color: lightgray;
+    cursor: pointer;
+}
+.Disabled:hover {
+    background-color: gray;
+}
