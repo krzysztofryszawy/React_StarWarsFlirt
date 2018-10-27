@@ -14,14 +14,25 @@ class swMain extends Component {
         
     }
     
+    
+//gets FilteringButtons from child component(passed by callback sending object argument)
+    getFilteringButtons = (filteringGender, filteringHair) => {
+        this.setState({filteringGender: filteringGender})
+        this.setState({filteringHair: filteringHair})
+    }
+    
+
+
     render() {
-        
     
         return(
             <div className={styles['SwMain']}>
                <SwInterface
-                   filtruj={null}/>
-               <ViewWindow/>
+                   filteringGender={this.state.filteringGender}
+                   filteringHair={this.state.filteringHair}
+                   />
+               <ViewWindow
+                   getFilteringButtons={this.getFilteringButtons}/>
             </div>
         )
     }

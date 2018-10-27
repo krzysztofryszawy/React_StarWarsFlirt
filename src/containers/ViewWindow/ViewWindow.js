@@ -3,6 +3,10 @@ import styles from './ViewWindow.module.css'
 import SwAxios from '../../axios-swInstance';
 import Profiles from '../../components/Profiles/Profiles'
 import axios from 'axios'
+import Filters from  '../../components/Filters/Filters'
+import Button from '../../components/UI/Button/Button'
+
+
 
 class viewWindow extends Component {
 
@@ -11,7 +15,7 @@ class viewWindow extends Component {
         loading: false,
         lovers: [],
         filteredLovers: [],
-        gender: ['female', 'n/a', 'male'],
+        gender: ['female', 'male', 'n/a'],
         hair_color: ['brown', 'blond', 'n/a', 'none'],
         height: ["150", '172', '167', '96']
     }
@@ -62,24 +66,9 @@ class viewWindow extends Component {
     
 // filters output data with settings recieved from state and saves as data to .map in Profiles component
     filterLovers = () => {
-        const result = this.state.lovers.filter
-            (singleResult => this.state.gender.includes(singleResult.gender) 
-             && this.state.hair_color.includes(singleResult.hair_color) 
-             && this.state.height.includes(singleResult.height))
+        const result = this.state.lovers.filter(singleResult => this.state.gender.includes(singleResult.gender) && this.state.hair_color.includes(singleResult.hair_color) && this.state.height.includes(singleResult.height))
         this.setState({filteredLovers:result})
     }
-    
-    
-    
-    handleInputChange(e) {
-        const target = e.target;
-        alert(e.target.checked)
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        const name = target.name;
-        this.setState({[name]: value});
-    }
-    
-    
     
     
     
@@ -88,40 +77,66 @@ class viewWindow extends Component {
     
     render() {
         
+        
+        
+// sends data (filter buttons) to component level up by using callback => to show inside other component (Interface)
+        const sendFunction = () => {
+            this.props.getFilteringButtons(filteringGender, filteringHair)
+        }
+        
+        
+        
+        
+//changes state to set info what filters should be used // redundant variables left just for easier code understanding
+    const changeState = (e) => {
+        const filterKey = e.target.name
+        const filterValue = e.target.value
+        const array = this.state[filterKey]
+        const idxFilterValue = array.indexOf(filterValue)
+//if value exist should be removed        
+        if (idxFilterValue !== -1 ) {
+            array.splice(idxFilterValue, 1)
+        } 
+//if dont exist should be added            
+        else {
+            array.push(filterValue)
+        }
+        this.setState({[filterKey]: array},() => this.filterLovers())
+    }
+
+    
+    
+    
+    
+    
+    
+    
+//    btnType={this.state.showInsuranceComponent ? 'Proceed' : 'Disabled'}
+    let filteringGender = (
+        <Filters
+            description={'CHOOSE GENDER'}
+            >
+            {this.state.gender.some((el) => el == 'male') ? <Button btnType='Proceed' name="gender" value='male' clicked={changeState}> ✔ MALE </Button> : <Button btnType='Cancel' name="gender" value='male' clicked={changeState}> ✔ MALE </Button>}
+            <Button btnType='Proceed' name="gender" value='female' clicked={changeState}> ✔ FEMALE </Button>            
+            <Button btnType='Proceed' name="gender" value='n/a' clicked={changeState}> ✔ WHO CARES??? </Button>            
+        </Filters>
+    )
+    
+    let filteringHair = (
+        <Filters
+           description={'CHOOSE HAIR'}
+           >
+            <button name="hair_color" value='brown' onClick={changeState}> ✔ BROWN </button>            
+            <button name="hair_color" value='blond' onClick={changeState}> ✔ BLOND </button>            
+            <button name="hair_color" value='n/a' onClick={changeState}> ✔ N/A </button>            
+            <button name="hair_color" value='none' onClick={changeState}> ✔ BOLD </button>            
+        </Filters>
+    )
 
         
         return(
             <div className={styles['viewWindow']}>
-               <div>GENDER: 
-                    <form> 
-                        <label>MALE:
-                          <input
-                            name="genderInput"
-                            type="checkbox"
-                            checked={'male'}
-                            onChange={this.handleInputChange}
-                            />
-                        </label>
-                        
-                        <label>FEMALE:
-                          <input
-                            name="genderInput"
-                            type="checkbox"
-                            checked={'female'}
-                            onChange={this.handleInputChange}
-                            />
-                        </label>
-                        
-                        <label>WHO CARES??:
-                          <input
-                            name="genderInput"
-                            type="checkbox"
-                            checked={'n/a'}
-                            onChange={this.handleInputChange}
-                            />
-                        </label>
-                    </form>
-               </div>
+                <button onClick={sendFunction}>TRANSFER</button>
                 <Profiles
                     filteredLovers={this.state.filteredLovers}
                     loading={this.state.loading}

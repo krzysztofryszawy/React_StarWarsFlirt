@@ -1,0 +1,13 @@
+.filtersContainer {
+/*    background-color: palevioletred;*/
+    display: flex;
+    flex-direction: row;
+    margin: 1em;
+/*    margin-right: 2em;*/
+    border: 2px dashed darkorange;
+    padding: 1em;
+}
+
+.buttonsContainer {
+    color: red;
+}

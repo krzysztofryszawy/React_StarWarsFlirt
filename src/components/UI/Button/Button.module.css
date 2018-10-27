@@ -1,13 +1,14 @@
 .Button {
     outline: none;
     border: 2px dashed orange;
-    color: white;
+    color: black;
     cursor: pointer;
     font: inherit;
-    font-size: .6em;
+    font-size: 1em;
     text-align: center;
 /*    min-height: 2em;*/
     padding: .5em;
+    margin: .5em;
 }
 
 /*
@@ -18,11 +19,11 @@
 */
 
 .Proceed {
-    background-color: darkolivegreen;
+    background-color: yellow;
     cursor: pointer;
 }
 .Proceed:hover {
-    background-color: yellowgreen;
+    background-color: orangered;
 }
 
 .Cancel {
