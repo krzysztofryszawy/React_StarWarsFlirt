@@ -23,7 +23,7 @@ class viewWindow extends Component {
 //load data from API and duplicate as initial value of filtered object
     componentDidMount() {
         this.loadLocalDatabase()
-        
+        this.props.getFilteringButtons(this.filteringGender, this.filteringHair)
     }
 
 
@@ -77,7 +77,7 @@ class viewWindow extends Component {
     
     
     render() {
-    
+        
         
 // return actual         
     const setfilteringGender = () => {
@@ -132,9 +132,8 @@ class viewWindow extends Component {
         }
         this.setState({[filterKey]: array},() => {
             this.filterLovers()
-
-//conditional buttons update when filters were changed
             setfilteringGender()
+//conditional buttons update when filters were changed
 
 
 //send filtering buttons
@@ -193,7 +192,7 @@ class viewWindow extends Component {
         
         return(
             <div className={styles['viewWindow']}>
-                <button onClick={() => this.props.getFilteringButtons(filteringGender, filteringHair)}>FILTER</button>
+                <button onClick={() => this.props.getFilteringButtons(filteringGender, filteringHair)}>TRANSFER</button>
                 
                 <Profiles
                     filteredLovers={this.state.filteredLovers}

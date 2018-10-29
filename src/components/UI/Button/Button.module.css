@@ -23,7 +23,7 @@
     cursor: pointer;
 }
 .Proceed:hover {
-    background-color: orangered;
+    opacity: .4;
 }
 
 .Cancel {
@@ -35,9 +35,15 @@
 }
 
 .Disabled {
-    background-color: lightgray;
+    background-color: black;
+    color: gray;
     cursor: pointer;
+        border: 2px dashed gray;
 }
 .Disabled:hover {
-    background-color: gray;
+    background-color: yellow;
+    color: black;
+    border: 2px dashed orange;
+        opacity: .4;
+
 }

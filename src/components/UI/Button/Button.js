@@ -6,7 +6,10 @@ const button = (props) => (
         className={[styles.Button, styles[props.btnType]].join(' ')}
         onClick={props.clicked}
         value={props.value}
-        name={props.name}>{props.children}</button>
+        name={props.name}>
+        {props.symbol}
+        {props.children}
+    </button>
 );
 
 export default button;
