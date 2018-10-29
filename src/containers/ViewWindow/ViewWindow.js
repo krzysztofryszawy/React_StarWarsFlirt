@@ -23,6 +23,7 @@ class viewWindow extends Component {
                 
                 <Profiles
                     filteredLovers={this.props.filteredLovers}
+                    filteredLoversLength={this.props.filteredLoversLength}
                     loading={this.state.loading}
                 />
             </div>

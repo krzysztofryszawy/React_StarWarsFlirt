@@ -2,12 +2,10 @@
 /*    background-color: palevioletred;*/
     display: flex;
     flex-direction: row;
-    margin: 1em;
+    margin: .4em;
 /*    margin-right: 2em;*/
     border: 2px dashed darkorange;
-    padding: 1em;
+    padding: .4em;
 }
 
-.buttonsContainer {
-    color: red;
-}
+

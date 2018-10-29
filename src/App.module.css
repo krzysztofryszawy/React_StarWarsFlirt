@@ -3,5 +3,11 @@
     min-height: 100vh;
     background-image:url(./assets/images/asteroids.jpg);
     background-repeat: repeat;
-    
+    animation: backgroundScroll 9999999s linear infinite;
+  
+}
+
+@keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: -59999999px 0;}
 }

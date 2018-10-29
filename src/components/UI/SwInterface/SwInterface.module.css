@@ -1,7 +1,7 @@
 .swInterface {
     background-color: black;
     color: yellow;
-    height: 20vh;
+/*    height: 20vh;*/
     width: 100vw;
     position: fixed;
     top: 0;
@@ -16,5 +16,6 @@
     flex-direction: row;
     justify-content:center;
     align-items:flex-start;
+    flex-wrap: wrap;
 /*    align-content: space-around;*/
 }
