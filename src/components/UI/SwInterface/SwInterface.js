@@ -9,8 +9,7 @@ const swInterface = (props) => {
             <div className={styles['swInterface']}>
                     <p style={{color:'yellow'}}>STAR-WARS FLIRT <span style={{color:'red'}}> ❤ </span> 👾 👩 👽 👨 🤖 </p>
                <div className={styles['filters']}>
-                    {props.filteringGender}
-                    {props.filteringHair}
+                    {props.children}
                </div>
             </div>
     )

@@ -23,7 +23,7 @@
     cursor: pointer;
 }
 .Proceed:hover {
-    opacity: .4;
+    opacity: .2;
 }
 
 .Cancel {
@@ -44,6 +44,6 @@
     background-color: yellow;
     color: black;
     border: 2px dashed orange;
-        opacity: .4;
+        opacity: .2;
 
 }
