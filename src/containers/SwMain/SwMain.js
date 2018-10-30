@@ -8,6 +8,7 @@ import ViewWindow from '../ViewWindow/ViewWindow'
 import SwInterface from '../../components/UI/SwInterface/SwInterface'
 import Filters from  '../../components/Filters/Filters'
 import Button from '../../components/UI/Button/Button'
+import Spinner from '../../components/UI/Spinner/Spinner'
 
 
 
@@ -27,7 +28,8 @@ class swMain extends Component {
 
 //load data from API and duplicate as initial value of filtered object
     componentDidMount() {
-        this.loadLocalDatabase()
+        this.getAll()
+//        this.loadLocalDatabase()
 //        this.loadDatabase()
     }    
 
@@ -64,10 +66,82 @@ class swMain extends Component {
 
     
     
+    
+    
+// EXPERIMENTAL MULTIPLE REQUEST
+//    
+// makeRequestsFromArray(arr) {
+//    let index = 1;
+//    let result = []
+//    
+//    
+//    function request() {
+//        return SwAxios.get('/people/?page=' + index).then((response) => {
+//            this.setState({baza: response.data.results})
+////            result = result.concat(response.data.results)
+////            console.log(result)
+//            index++;
+//            if (index >= arr.length) {
+//                return {
+//                    
+//                }
+//            }
+//            
+//            return request();
+//        });
+//
+//    }
+//    
+//     
+//     return request();
+//}
+//
+//    
+//    
+    
+    
+
+
+//################# AXIOS    
+    
+ getData1 = () => SwAxios.get('/people/?page=1')
+ getData2 = () => SwAxios.get('/people/?page=2')
+ getData3 = () => SwAxios.get('/people/?page=3')
+ getData4 = () => SwAxios.get('/people/?page=4')
+ getData5 = () => SwAxios.get('/people/?page=5')
+ getData6 = () => SwAxios.get('/people/?page=6')
+
+
+
+
+getAll = () => {
+    this.setState({loading:true})
+    axios.all([this.getData1(), this.getData2(), this.getData3(), this.getData4(), this.getData5(), this.getData6()])
+      .then(axios.spread((page1, page2, page3, page4, page5, page6) => {
+        let finalData = page1.data.results.concat(page2.data.results).concat(page3.data.results).concat(page4.data.results).concat(page5.data.results).concat(page6.data.results)
+        
+        this.setState({lovers: finalData, filteredLovers: finalData, loading: false}, this.filterLovers)
+
+      }));    
+}
+    
+//################# AXIOS    
+
+
+
+
+
+
+
+
+
+
+
+
+    
 //separated method to allow filters any others hair colors beside few choosen
     switchHairWeird = () => {
         this.setState({hairWeird:!this.state.hairWeird},() => this.filterLovers())
-        
     }
       
     
@@ -110,12 +184,24 @@ class swMain extends Component {
         this.setState({maximumHeight: e.target.value}, () => this.filterLovers())
     }
     
-    
+
     
     render() {
+    
+//loader
+    if (this.state.loading) { let viewWindowContent = <Spinner/> }
+        
+    let viewWindowContent = <ViewWindow
+                       filteredLovers={this.state.filteredLovers}
+                       filteredLoversLength={this.state.filteredLovers.length}
+                    />
+
+
+        
         return(
             <div className={styles['SwMain']}>
                <SwInterface>
+                   <button onClick ={this.getAll}>LOAD ALL</button>
                     <Filters description={'CHOOSE GENDER'}>
                         <Button
                             name="gender" 
@@ -213,11 +299,7 @@ class swMain extends Component {
                    
                     
                </SwInterface>
-               
-               <ViewWindow
-                   filteredLovers={this.state.filteredLovers}
-                   filteredLoversLength={this.state.filteredLovers.length}
-                    />
+                    {viewWindowContent}
             </div>
         )
     }
