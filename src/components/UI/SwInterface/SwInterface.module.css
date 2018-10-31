@@ -2,11 +2,12 @@
     background-color: black;
     color: yellow;
 /*    height: 20vh;*/
-    width: 100vw;
-    position: fixed;
+/*    width: 100%;*/
+/*    position: fixed;*/
     top: 0;
     z-index: 10000;
     border-bottom: 5px dashed yellow;
+    font-size: 1.5em;
 
 }
 
@@ -17,5 +18,10 @@
     justify-content:center;
     align-items:flex-start;
     flex-wrap: wrap;
+    
 /*    align-content: space-around;*/
+}
+
+@media (max-width: 800px) {
+    .swInterface { font-size: .8em }
 }

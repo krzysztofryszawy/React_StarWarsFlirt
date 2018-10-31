@@ -8,14 +8,13 @@ import ViewWindow from '../ViewWindow/ViewWindow'
 import SwInterface from '../../components/UI/SwInterface/SwInterface'
 import Filters from  '../../components/Filters/Filters'
 import Button from '../../components/UI/Button/Button'
-import Spinner from '../../components/UI/Spinner/Spinner'
 
 
 
 class swMain extends Component {
 
     state = {
-        loading: false,
+        loading: true,
         lovers: [],
         filteredLovers: [],
         minimumHeight: 0,
@@ -110,15 +109,18 @@ class swMain extends Component {
  getData4 = () => SwAxios.get('/people/?page=4')
  getData5 = () => SwAxios.get('/people/?page=5')
  getData6 = () => SwAxios.get('/people/?page=6')
+ getData7 = () => SwAxios.get('/people/?page=7')
+ getData8 = () => SwAxios.get('/people/?page=8')
+ getData9 = () => SwAxios.get('/people/?page=9')
 
 
 
 
 getAll = () => {
     this.setState({loading:true})
-    axios.all([this.getData1(), this.getData2(), this.getData3(), this.getData4(), this.getData5(), this.getData6()])
-      .then(axios.spread((page1, page2, page3, page4, page5, page6) => {
-        let finalData = page1.data.results.concat(page2.data.results).concat(page3.data.results).concat(page4.data.results).concat(page5.data.results).concat(page6.data.results)
+    axios.all([this.getData1(), this.getData2(), this.getData3(), this.getData4(), this.getData5(), this.getData6(), this.getData7(), this.getData8(), this.getData9()])
+      .then(axios.spread((page1, page2, page3, page4, page5, page6, page7, page8, page9) => {
+        let finalData = page1.data.results.concat(page2.data.results).concat(page3.data.results).concat(page4.data.results).concat(page5.data.results).concat(page6.data.results).concat(page7.data.results).concat(page8.data.results).concat(page9.data.results)
         
         this.setState({lovers: finalData, filteredLovers: finalData, loading: false}, this.filterLovers)
 
@@ -187,21 +189,10 @@ getAll = () => {
 
     
     render() {
-    
-//loader
-    if (this.state.loading) { let viewWindowContent = <Spinner/> }
-        
-    let viewWindowContent = <ViewWindow
-                       filteredLovers={this.state.filteredLovers}
-                       filteredLoversLength={this.state.filteredLovers.length}
-                    />
-
-
         
         return(
             <div className={styles['SwMain']}>
                <SwInterface>
-                   <button onClick ={this.getAll}>LOAD ALL</button>
                     <Filters description={'CHOOSE GENDER'}>
                         <Button
                             name="gender" 
@@ -299,7 +290,11 @@ getAll = () => {
                    
                     
                </SwInterface>
-                    {viewWindowContent}
+               <ViewWindow
+                   filteredLovers={this.state.filteredLovers}
+                   filteredLoversLength={this.state.filteredLovers.length}
+                   loading={this.state.loading}
+                />
             </div>
         )
     }

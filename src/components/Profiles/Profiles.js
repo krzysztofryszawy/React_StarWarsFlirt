@@ -3,8 +3,8 @@ import styles from './Profiles.module.css'
 
 import SingleProfile from './SingleProfile/SingleProfile'
 import Avatar from '../Avatar/Avatar'
-import Description from '../Description/Description'
-import ProfileBox from '../ProfileBox/ProfileBox'
+import Description from './SingleProfile/ProfileBox/Description/Description'
+import ProfileBox from './SingleProfile/ProfileBox/ProfileBox'
 
 class profiles extends Component {
     
@@ -18,7 +18,12 @@ class profiles extends Component {
 
     }
 
+
     
+    counter = (e) => {
+        this.setState({giveHeart: e.target.value}, () => console.log(this.state.giveHeart))
+        
+    }
 
 
     render() {
@@ -43,7 +48,9 @@ class profiles extends Component {
                          
                             return(
                             <SingleProfile key={lover.url}>
-                                <ProfileBox>
+                                <ProfileBox
+                                    id={lover.url}
+                                    giveHeart={this.counter}>
                                     <Avatar
                                           icon={localIcon}/>
                                     <Description

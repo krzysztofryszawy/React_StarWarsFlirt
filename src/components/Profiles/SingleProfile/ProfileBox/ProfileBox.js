@@ -5,6 +5,7 @@ const profileBox = (props) => {
     
     return(
         <div className={styles['profileBox']}>
+
             {props.children}
         </div>
     )

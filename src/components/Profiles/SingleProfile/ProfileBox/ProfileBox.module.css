@@ -4,14 +4,17 @@
  ========================================================*/
 
 .profileBox {
-    background-image: url(../../assets/images/pw_maze_black.png);
+    background-image: url(../../../../assets/images/pw_maze_black.png);
     background-repeat: repeat;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:space-around;
-    margin: 2em;
+    justify-content:space-between;
+    margin: .5em;
     padding: .5em;
     border: 2px dashed darkorange;
+    border-radius: 15px;
     width: 20em;
+
+    
 }

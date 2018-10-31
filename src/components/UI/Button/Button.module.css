@@ -1,6 +1,6 @@
 .Button {
     outline: none;
-    border: 2px dashed orange;
+    border: 2px dashed orangered;
     color: black;
     cursor: pointer;
     font: inherit;
@@ -9,6 +9,8 @@
 /*    min-height: 2em;*/
     padding: .5em;
     margin: .5em;
+        border-radius: 5px;
+
 }
 
 /*

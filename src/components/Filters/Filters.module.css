@@ -5,7 +5,12 @@
     margin: .4em;
 /*    margin-right: 2em;*/
     border: 2px dashed darkorange;
+    border-radius: 10px;
     padding: .4em;
 }
 
 
+@media (max-width: 800px) {
+    .filtersContainer { margin: .1em    }
+    
+}

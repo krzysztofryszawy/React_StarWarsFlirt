@@ -5,6 +5,22 @@
     width: 60vw;
     opacity: .9;
     border: 5px dashed yellow;
-       min-width: 400px;
-    margin-top: 25vh;
+    min-width: 400px;
+    padding-left: 5vw; 
+    padding-right: 5vw;
+    display: inline-block;
+    border-radius: 40px;
+    font-size: 1.3em;
+/*
+    margin-left: 15vw;
+    margin-right: auto;    
+*/
+    margin-top: 2em;
+
+}
+
+
+@media (max-width: 800px) {
+    .viewWindow { font-size: .8em;  min-width: 250px;    }
+    
 }
