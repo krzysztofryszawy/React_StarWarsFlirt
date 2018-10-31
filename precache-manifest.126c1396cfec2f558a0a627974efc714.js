@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/React_StarWarsFlirt/static/js/runtime~main.afef2605.js"
   },
   {
-    "revision": "0c43339b548a134f6457",
-    "url": "/React_StarWarsFlirt/static/js/main.0c43339b.chunk.js"
+    "revision": "da52fb58480b7e29b644",
+    "url": "/React_StarWarsFlirt/static/js/main.da52fb58.chunk.js"
   },
   {
     "revision": "9bc0645c5055137ae7c3",
     "url": "/React_StarWarsFlirt/static/js/1.9bc0645c.chunk.js"
   },
   {
-    "revision": "0c43339b548a134f6457",
-    "url": "/React_StarWarsFlirt/static/css/main.4a5b9b3b.chunk.css"
+    "revision": "da52fb58480b7e29b644",
+    "url": "/React_StarWarsFlirt/static/css/main.5359ed5e.chunk.css"
   },
   {
-    "revision": "8549e6649c6432c087c94c0f52fcd345",
+    "revision": "5445573320ead3b23014755c95b17874",
     "url": "/React_StarWarsFlirt/index.html"
   }
 ];
