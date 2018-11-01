@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/React_StarWarsFlirt/precache-manifest.cc43f668cd6a6c5cfdcbdb56d4800e89.js"
+  "/React_StarWarsFlirt/precache-manifest.e25ede0809bb6af17fb86ee6904ff15f.js"
 );
 
 workbox.clientsClaim();
